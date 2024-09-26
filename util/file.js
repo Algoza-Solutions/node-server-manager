@@ -1,5 +1,5 @@
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require("fs").promises;
+const path = require("path");
 
 const isFileExist = async (fileName) => {
   const filePath = path.resolve(fileName);

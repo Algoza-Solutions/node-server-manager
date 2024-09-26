@@ -1,4 +1,4 @@
-const logger = require('./logger');
+const logger = require("./logger");
 
 const handleError = (error, message) => {
   logger.error(`${message}: ${error.message}`);

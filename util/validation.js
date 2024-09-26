@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 const isValidFilePath = (filePath) => {
   // Simple validation to check for forbidden characters or patterns
