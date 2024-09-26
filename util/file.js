@@ -9,7 +9,7 @@ const isFileExist = async (fileName) => {
     console.log(`${fileName} exists.`);
     return true;
   } catch (err) {
-    console.log(`${fileName} does not exist.`);
+    console.log(`${fileName} does not exist.`, err.message);
     return false;
   }
 };
