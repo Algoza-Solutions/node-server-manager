@@ -8,6 +8,7 @@
 
 - **Start** a Node.js script as a daemon process.
 - **Stop** a running daemonized Node.js server.
+- **Restart** the Node.js server seamlessly.
 - **Check status** of the daemonized server.
 - Cross-platform compatibility (Windows, macOS, Linux).
 - Logging of server output to a specified log file.
@@ -129,6 +130,26 @@ nsm stop
 - Reads the PID from the PID file.
 - Stops the process corresponding to the PID.
 - Removes the PID file after stopping the server.
+
+#### 4. `restart`
+Restarts a Node.js script as a daemon process.
+
+**Syntax:**
+
+```bash
+nsm restart <scriptPath> [logFilePath]
+```
+
+**Parameters:**
+
+- `<scriptPath>`: The path to the Node.js script to run.
+- `[logFilePath]`: (Optional) The path to the log file. Defaults to `~/node.log`.
+
+**Example:**
+
+```bash
+nsm restart ./app.js ./logs/app.log
+```
 
 #### 3. `status`
 
