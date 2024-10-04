@@ -3,6 +3,8 @@ const { createLogger, format, transports } = require("winston");
 const path = require("path");
 const os = require("os");
 
+const maxLogSize = 10 * 1024 * 1024; // 10 Megabytes
+
 const logger = createLogger({
   level: "info",
   format: format.combine(
@@ -11,7 +13,11 @@ const logger = createLogger({
   ),
   transports: [
     new transports.Console(),
-    new transports.File({ filename: path.resolve(os.homedir(), ".nsm", "nsm.log") }),
+    new transports.File({ 
+      filename: path.resolve(os.homedir(), ".nsm", "nsm.log"),
+      maxsize: maxLogSize,
+      maxFiles: 10
+    }),
   ],
 });
 
